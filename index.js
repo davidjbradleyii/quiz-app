@@ -138,6 +138,13 @@ function displayQuestion(){
 
 function nextQuestion(){
     //this function moves the user to the next question
+
+    if(playerStats.question < (quiz.questions.length - 1)){
+        playerStats.updateQuestion();
+        displayQuestion();
+    }else{
+        displayFinalStatsView();
+    }
 }
 
 function displayFeedback(){
