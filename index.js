@@ -71,7 +71,18 @@ const playerStats = {
 function displayWelcomeScreen(){
     //this function will display the appropriate quiz name
     //along with the welcome message with the quiz name DOM 
-   
+
+    let welcomeMessage = `Welcome to the ${quiz.name} quiz.</br> Are you ready to test your knowledge of this popular TV Series? If so, hit the button below to get started.`;
+
+    $('.quiz-name').text(`${quiz.name} Quiz`);
+    $('.display').html(`
+        <section class="display-view">
+            <p class="display-text">${welcomeMessage}</p>
+        </section>
+        <form role="form" id="welcome">
+            <button type="submit">Begin</button>
+        </form>`
+    );
 }
 
 function displayChoices(){
