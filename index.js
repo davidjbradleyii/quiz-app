@@ -96,6 +96,19 @@ function displayChoices(){
 
 function displayQuestion(){
     //this function will display each question
+
+    $('.display').html(`
+    <section class="display-view">
+        <p class="display-text">${quiz.questions[playerStats.question].question}</p>
+    </section>
+    <form role="form" id="quiz">
+    <fieldset>
+        <section class="flex-container">
+            ${displayChoices(playerStats.question)}
+        </section>
+    </fieldset>
+    <button type="submit">Submit</button>
+    </form>`);
 }
 
 function nextQuestion(){
