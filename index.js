@@ -92,6 +92,20 @@ function displayWelcomeScreen(){
 
 function displayChoices(){
     //this function will display the appropriate answer options for the question displayed
+
+    let choices = quiz.questions[playerStats.question].choices;
+    let choicesDisplay = "";
+
+    for(let i = 0; i < choices.length; i++){
+        choicesDisplay += `
+        <section class="choice">
+            <label for="opt-${i+1}">${choices[i]}</label>
+            <input id="opt-${i+1}" type="radio" name="quiz-question"/>
+        </section>
+        `;
+    }
+    
+    return choicesDisplay;
 }
 
 function displayQuestion(){
