@@ -83,6 +83,11 @@ function displayWelcomeScreen(){
             <button type="submit">Begin</button>
         </form>`
     );
+
+    $('.display').on('submit', '#welcome', function(evt){
+        evt.preventDefault();
+        displayQuestion();
+    });
 }
 
 function displayChoices(){
