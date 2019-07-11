@@ -204,6 +204,21 @@ function displayUserStats(){
 function displayFinalStatsView(){
     //this function will display the users final stats to the DOM
     
+    let totalNumberOfQuestions = quiz.questions.length;
+
+    $('.user-data').remove();
+
+    $('.display').html(`
+        <section class="final-view">
+            <p class="display-questionInfo">Questions: ${totalNumberOfQuestions} out of ${totalNumberOfQuestions}</p>
+            <p class="display-score">Score: ${(playerStats.correct/quiz.questions.length) * 100}%</p>
+            <p class="display-totalCorrect">Total Correct: ${playerStats.correct}</p>
+            <p class="display-totalIncorrect">Total Inccorrect: ${playerStats.incorrect}</p>
+        </section>
+        <form role="form" id="retry">
+            <button type="submit">Retry</button>
+        </form>
+    `);
 }
 
 function handleQuizzes(){
