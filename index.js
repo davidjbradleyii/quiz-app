@@ -187,13 +187,18 @@ function displayFeedback(){
                 playerStats.updateIncorrect();
             }
         });
-        
+
         nextQuestion();
     });
 }
 
 function displayUserStats(){
     //this function will display the users stats to the DOM
+
+    const numberOfQuestions = quiz.questions.length;
+
+    $('.progress').text(`Question: ${playerStats.question + 1} of ${numberOfQuestions}`);
+    $('.score').text(`Score: (${playerStats.correct} correct, ${playerStats.incorrect} incorrect)`);
 }
 
 function displayFinalStatsView(){
