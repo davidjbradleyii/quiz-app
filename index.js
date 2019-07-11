@@ -160,7 +160,16 @@ function displayFeedback(){
             selectedAnswer = index;
         }
     });
+    
+    $('input').each(function(index,element){
+        if(index === answerIndex){
+            $(element).parent().addClass('correct');
+        }
 
+        if(selectedAnswer === index && index !== answerIndex){
+            $(element).parent().addClass('incorrect');
+        }
+    });
 
     $('button').remove();
     $('#quiz').append(`<button type="submit" class="submit">Next</button>`);
