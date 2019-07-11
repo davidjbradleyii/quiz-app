@@ -149,6 +149,39 @@ function nextQuestion(){
 
 function displayFeedback(){
     //this function will provide feedback to the user on if they selected the correct answer or not
+
+    let answerIndex = quiz.questions[playerStats.question].answerIndex;
+    let choices = $('input');
+    let selectedAnswer;
+    
+
+    choices.filter(function(index,element){
+        if($(element).prop('checked')){
+            selectedAnswer = index;
+        }
+    });
+
+
+    $('button').remove();
+    $('#quiz').append(`<button type="submit" class="submit">Next</button>`);
+    $('form').attr('id','feedback');
+
+    $('#feedback').on('submit', function(evt){
+        evt.preventDefault();  
+
+        $('input').each(function(index,element){
+            if(selectedAnswer === answerIndex && ($(element).prop('checked'))){
+                playerStats.updateCorrect();
+            }
+
+            if(selectedAnswer !== answerIndex && ($(element).prop('checked'))){
+                playerStats.updateIncorrect();
+            }
+        });
+
+        //displayUserStats();
+        nextQuestion();
+    });
 }
 
 function displayUserStats(){
