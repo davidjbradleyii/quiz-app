@@ -128,6 +128,7 @@ function displayQuestion(){
         evt.preventDefault();
         $('input').filter(function(index,element){
             if($(element).prop("checked")){
+                displayFeedback();
                 $('input').each(function(index,element){
                     $(element).prop('disabled', true);
                 });
