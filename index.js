@@ -111,6 +111,8 @@ function displayChoices(){
 function displayQuestion(){
     //this function will display each question
 
+    displayUserStats();
+    
     $('.display').html(`
     <section class="display-view">
         <p class="display-text">${quiz.questions[playerStats.question].question}</p>
