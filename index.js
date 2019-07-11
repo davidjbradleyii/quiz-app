@@ -160,7 +160,7 @@ function displayFeedback(){
             selectedAnswer = index;
         }
     });
-    
+
     $('input').each(function(index,element){
         if(index === answerIndex){
             $(element).parent().addClass('correct');
@@ -187,8 +187,7 @@ function displayFeedback(){
                 playerStats.updateIncorrect();
             }
         });
-
-        //displayUserStats();
+        
         nextQuestion();
     });
 }
