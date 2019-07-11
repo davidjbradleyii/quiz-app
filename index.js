@@ -123,6 +123,17 @@ function displayQuestion(){
     </fieldset>
     <button type="submit">Submit</button>
     </form>`);
+
+    $('#quiz').on('submit', function(evt){
+        evt.preventDefault();
+        $('input').filter(function(index,element){
+            if($(element).prop("checked")){
+                $('input').each(function(index,element){
+                    $(element).prop('disabled', true);
+                });
+            } 
+        });
+    });
 }
 
 function nextQuestion(){
