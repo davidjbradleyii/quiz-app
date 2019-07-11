@@ -67,3 +67,40 @@ const playerStats = {
         this.question += 1;
     }
 };
+
+function displayWelcomeScreen(){
+    //this function will display the appropriate quiz name
+    //along with the welcome message with the quiz name DOM 
+   
+}
+
+function displayChoices(){
+    //this function will display the appropriate answer options for the question displayed
+}
+
+function displayQuestion(){
+    //this function will display each question
+}
+
+function nextQuestion(){
+    //this function moves the user to the next question
+}
+
+function displayFeedback(){
+    //this function will provide feedback to the user on if they selected the correct answer or not
+}
+
+function displayUserStats(){
+    //this function will display the users stats to the DOM
+}
+
+function displayFinalStatsView(){
+    //this function will display the users final stats to the DOM
+    
+}
+
+function handleQuizzes(){
+    displayWelcomeScreen();
+} 
+
+$(handleQuizzes);
