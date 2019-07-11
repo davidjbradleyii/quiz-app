@@ -52,3 +52,18 @@ const quiz = {
         answerIndex: 3
     }]
 };
+
+const playerStats = {
+    question: 0,
+    correct: 0,
+    incorrect: 0,
+    updateCorrect:function(){
+        this.correct += 1;
+    },
+    updateIncorrect: function(){
+        this.incorrect += 1;
+    },
+    updateQuestion: function(){
+        this.question += 1;
+    }
+};
